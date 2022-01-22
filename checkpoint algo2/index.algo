@@ -1,0 +1,21 @@
+ALGORITHM distinct_elements
+VAR
+    set_1 : ARRAY_OF INTEGER ;
+    set_2 : ARRAY_OF INTEGER ;
+    sum,i,j:INTEGER
+    found:BOOLEAN
+BEGIN
+    sum:=0
+    FOR i FROM 0 TO set_1.length-1 STEP 1  DO
+        found:= FALSE
+        FOR j FROM 0 TO set_2.length-1 STEP 1  DO
+          IF (set_1[i]=set_2[j]) THEN
+              found:=TRUE
+          END_IF
+        END_FOR
+        IF (found:=FALSE) THEN
+            sum:=sum+set_1[i]
+        END_IF
+    END_FOR
+    write(sum)
+END
